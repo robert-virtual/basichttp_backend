@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 if (!__prod__) {
+  console.log("development");
   require("dotenv").config();
   const morgan = require("morgan");
   app.use(morgan("dev"));
