@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "prisma": "^3.13.0"
   }
 }
