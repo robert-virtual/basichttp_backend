@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { __prod__ } = require("./const");
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 if (!__prod__) {
   console.log("development");
