@@ -5,6 +5,9 @@ const router = require("express").Router();
 router.get("/", (req, res) => {
   prisma.post
     .findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
       include: {
         user: true,
         images: true,
