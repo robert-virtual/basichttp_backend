@@ -30,6 +30,9 @@ router.post("/", upload.array("images"), (req, res) => {
     .create({
       data: {
         content,
+        images: {
+          create: req.files.map((f) => ({ url: f.filename })),
+        },
         user: {
           create: {
             name: `RamdonUser${round(random() * 1000) + 100}`,
