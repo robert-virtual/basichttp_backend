@@ -20,6 +20,9 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const { content } = req.body;
+  if (!content) {
+    return res.status(400).json("no envio el contenido");
+  }
   const { round, random } = Math;
   prisma.post
     .create({
