@@ -40,6 +40,9 @@ router.post("/", upload.array("images"), (req, res) => {
     })
     .then((data) => {
       res.json(data);
+    })
+    .catch((error) => {
+      res.json({ files: req.files, msg: error });
     });
 });
 module.exports = router;
