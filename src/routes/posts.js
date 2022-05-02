@@ -1,4 +1,5 @@
 const { PrismaClient } = require(".prisma/client");
+const upload = require("../config/multer");
 const prisma = new PrismaClient();
 const router = require("express").Router();
 
@@ -18,7 +19,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", upload.array("images"), (req, res) => {
   const { content } = req.body;
   if (!content) {
     console.log("body: ", req.body);
